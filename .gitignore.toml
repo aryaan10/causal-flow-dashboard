@@ -1,0 +1,23 @@
+# .streamlit/secrets.toml
+# Copy this file to .streamlit/secrets.toml in your GitHub repo
+# NEVER commit this file to a public repo -- add it via Streamlit Cloud dashboard
+# under App settings > Secrets
+
+[google_service_account]
+type = "service_account"
+project_id = "YOUR_PROJECT_ID"
+private_key_id = "YOUR_PRIVATE_KEY_ID"
+private_key = "-----BEGIN RSA PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END RSA PRIVATE KEY-----\n"
+client_email = "your-service-account@your-project.iam.gserviceaccount.com"
+client_id = "YOUR_CLIENT_ID"
+auth_uri = "https://accounts.google.com/o/oauth2/auth"
+token_uri = "https://oauth2.googleapis.com/token"
+auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
+client_x509_cert_url = "YOUR_CERT_URL"
+
+[drive_folders]
+processed = "GOOGLE_DRIVE_FOLDER_ID_FOR_processed"
+phase3    = "GOOGLE_DRIVE_FOLDER_ID_FOR_phase3"
+phase4    = "GOOGLE_DRIVE_FOLDER_ID_FOR_phase4"
+phase5    = "GOOGLE_DRIVE_FOLDER_ID_FOR_phase5"
+phase6    = "GOOGLE_DRIVE_FOLDER_ID_FOR_phase6"
