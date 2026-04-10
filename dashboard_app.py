@@ -849,7 +849,6 @@ elif page == "Asset Explorer":
                     f'<b>{sel} -> {f}</b><br>'
                     f'<span style="font-size:12px;color:#374151">'
                     f'TE: <b>{te:.5f} bits</b>  |  Net TE: <b>{nte:.5f} bits</b>  |  '
-                    f'Lag: <b>{lag} wks</b>  |  Stability: <b>{stab}/5</b>  |  '
                     f'<span style="color:{sc}">{slab}</span></span></div>',
                     unsafe_allow_html=True)
         else:
@@ -872,7 +871,6 @@ elif page == "Asset Explorer":
                     f'<b>{l} -> {sel}</b><br>'
                     f'<span style="font-size:12px;color:#374151">'
                     f'TE: <b>{te:.5f} bits</b>  |  Net TE: <b>{nte:.5f} bits</b>  |  '
-                    f'Lag: <b>{lag} wks</b>  |  Stability: <b>{stab}/5</b>  |  '
                     f'<span style="color:{sc}">{slab}</span></span></div>',
                     unsafe_allow_html=True)
         else:
