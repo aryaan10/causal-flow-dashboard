@@ -510,13 +510,13 @@ Absent does not mean no correlation -- it means no validated directional causali
         st.caption(
             "TE (bits): Transfer Entropy source -> target.  "
             "Net TE: TE(A->B) minus TE(B->A).  "
-            "Lag: weeks. Stability: of 5 windows."
+            
         )
         if not et_show.empty:
             show_df = et_show[["source", "target", "te_bits", "net_te_bits",
-                                "lag_weeks", "stability", "strength"]].head(30).rename(columns={
+                                 "strength"]].head(30).rename(columns={
                 "te_bits": "TE (bits)", "net_te_bits": "Net TE",
-                "lag_weeks": "Lag (wks)", "stability": "Stability /5", "strength": "Strength"})
+                 "strength": "Strength"})
             def cs(v):
                 return {"Strong": "background-color:#D1FAE5",
                         "Moderate": "background-color:#FEF3C7",
