@@ -484,7 +484,7 @@ Absent does not mean no correlation -- it means no validated directional causali
             "Node size = out-strength  |  Thickness = net TE  |  Colour = strength tier",
             fontsize=9, color="#374151")
         ax.axis("off")
-        st.pyplot(fig, use_container_width=True)
+        st.pyplot(fig, width="stretch")
         plt.close()
 
     with col_table:
@@ -503,8 +503,8 @@ Absent does not mean no correlation -- it means no validated directional causali
                 return {"Strong": "background-color:#D1FAE5",
                         "Moderate": "background-color:#FEF3C7",
                         "Weak": "background-color:#F3F4F6"}.get(v, "")
-            st.dataframe(show_df.style.applymap(cs, subset=["Strength"]),
-                         use_container_width=True, height=500)
+            st.dataframe(show_df.style.map(cs, subset=["Strength"]),
+                         width="stretch", height=500)
         else:
             st.info("No edge data found. Run Phases 2 to 4.")
 
@@ -588,7 +588,7 @@ volatility-based labelling.
                 if rn == CUREG:
                     s.loc[rn] = "background-color:" + NAME_COLOR.get(rn, "#6B7280") + "22;font-weight:600"
             return s
-        st.dataframe(crit_df.style.apply(hl, axis=None), use_container_width=True)
+        st.dataframe(crit_df.style.apply(hl, axis=None), width="stretch")
         st.markdown("""
 **Interpreting the table:**
 - **Bull:** High positive return, low volatility, low cross-asset correlation
@@ -621,7 +621,7 @@ Apply the regime_label_fix.py patch to Phase 3 and rerun Phases 3-6.
     ax2.set_title(spy_col + " cumulative return shaded by regime", fontsize=11)
     ax2.set_yscale("log")
     plt.tight_layout()
-    st.pyplot(fig2, use_container_width=True)
+    st.pyplot(fig2, width="stretch")
     plt.close()
     st.caption("Crisis periods (red) should align with major drawdowns. "
                "If not, apply the regime_label_fix patch.")
@@ -674,8 +674,8 @@ It works best as an overlay on an existing allocation.
                         "Neutral": "background-color:#F3F4F6"}.get(v, "")
             st.dataframe(
                 sdf[["Weight (%)", "Out-strength (bits)", "Asset class", "Role"]]
-                .style.applymap(cr, subset=["Role"]),
-                use_container_width=True, height=460)
+                .style.map(cr, subset=["Role"]),
+                width="stretch", height=460)
         else:
             st.info("Run the Phase 6 weekly refresh to generate signal data.")
 
@@ -691,7 +691,7 @@ It works best as an overlay on an existing allocation.
                     colors=[CLASS_COLOR.get(c, "#888") for c in cw],
                     autopct="%1.1f%%", startangle=90, textprops={"fontsize": 10})
             ax3.set_title("Weight by class -- " + CUREG + " regime", fontsize=11)
-            st.pyplot(fig3, use_container_width=True)
+            st.pyplot(fig3, width="stretch")
             plt.close()
 
         st.markdown("---")
@@ -708,7 +708,7 @@ It works best as an overlay on an existing allocation.
             ax4.set_title("Information role -- current regime", fontsize=11)
             ax4.tick_params(labelsize=8)
             plt.tight_layout()
-            st.pyplot(fig4, use_container_width=True)
+            st.pyplot(fig4, width="stretch")
             plt.close()
 
 
@@ -743,7 +743,7 @@ current regime's causal graph. Rebalanced weekly.
                 if col in df.columns:
                     s.loc[df[col] == df[col].min(), col] = "background-color:#D1FAE5;font-weight:600"
             return s
-        st.dataframe(perf.style.apply(hp, axis=None), use_container_width=True)
+        st.dataframe(perf.style.apply(hp, axis=None), width="stretch")
         st.caption("Green = best value in each column.")
 
     if not strat.empty:
@@ -758,7 +758,7 @@ current regime's causal graph. Rebalanced weekly.
         ax5.set_ylabel("Growth of $1"); ax5.legend(fontsize=9)
         ax5.set_title("Out-of-sample cumulative returns")
         ax5.axhline(1.0, color="black", linewidth=0.5, linestyle=":")
-        st.pyplot(fig5, use_container_width=True); plt.close()
+        st.pyplot(fig5,width="stretch" ); plt.close()
 
         fig6, ax6 = plt.subplots(figsize=(14, 4))
         for col in strat.columns:
@@ -768,7 +768,7 @@ current regime's causal graph. Rebalanced weekly.
             ax6.plot(dd.index, dd, linewidth=0.8, color=color, label=col)
         ax6.set_ylabel("Drawdown"); ax6.legend(fontsize=8)
         ax6.set_title("Drawdown comparison -- less negative is better")
-        st.pyplot(fig6, use_container_width=True); plt.close()
+        st.pyplot(fig6, width="stretch"); plt.close()
     else:
         st.info("Run Phase 5 to generate backtest results.")
 
@@ -876,5 +876,5 @@ elif page == "Asset Explorer":
         ax7.axhline(1.0, color="black", linewidth=0.5, linestyle=":")
         ax7.set_ylabel("Cumulative return"); ax7.set_title(sel + " -- recent 2 years")
         plt.tight_layout()
-        st.pyplot(fig7, use_container_width=True)
+        st.pyplot(fig7, width="stretch")
         plt.close()
