@@ -286,7 +286,7 @@ if page == "Home":
 
     with st.expander("What is this system and how does it work?", expanded=True):
         st.markdown("""
-### The problem with correlation
+### Rethinking how assets influence each other
 
 Most finance tools measure **correlation** between assets. Correlation tells you two
 assets move together, but it is symmetric -- it cannot tell you who moves first.
