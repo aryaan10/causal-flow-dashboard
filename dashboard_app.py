@@ -284,23 +284,39 @@ if page == "Home":
     )
     st.markdown("---")
 
-    with st.expander("What is this system and how does it work?", expanded=True):
+    with st.expander("Brief overview about the model", expanded=True):
         st.markdown("""
 ### Rethinking how assets influence each other
 
 Most finance tools measure **correlation** between assets. Correlation tells you two
-assets move together, but it is symmetric -- it cannot tell you who moves first.
+assets move together, but it is symmetric, it cannot tell you who moves first.
 It also cannot distinguish a genuine causal link from two assets both reacting to
 the same piece of news.
 
 This system asks a different question:
 
 > "Does knowing what Oil did last week reduce my uncertainty about what Energy
-> stocks will do this week -- beyond what Energy stocks' own history already tells me?"
+> stocks will do this week; beyond what Energy stocks' own history already tells me?"
 
 If yes, and if the relationship survives rigorous testing, then Oil is a
 **causal information leader** of Energy stocks.
 
+---
+### what the model accomplishes
+                    
+**Measures directional influence (not just co-movement)**
+Identifies which assets lead and which ones follow, capturing the flow of information across markets.
+**Quantifies predictive information gain**
+Uses information-theoretic methods to test whether one asset meaningfully improves forecasts of another.
+**Builds a dynamic causal network**
+Represents markets as a graph where nodes are assets and edges capture statistically validated influence.
+**Filters for robustness**
+Only retains relationships that survive significance testing, reducing noise and spurious signals.
+**Tracks evolving market structure**
+Updates relationships over time to capture regime shifts and changing leadership dynamics.
+**Generates actionable signals**
+Highlights potential leading indicators that can be used for portfolio construction and risk management.
+                    
 ---
 
 ### What Transfer Entropy measures
@@ -339,11 +355,7 @@ The causal graph is estimated separately for each regime.
 | Bear | Negative returns, elevated volatility, rising correlation |
 | Crisis | Sharp losses, very high volatility, very high correlation, risk-off across all assets |
 
-**Note on crisis returns in the regime criteria table:** The average annualised return
-for the crisis regime should be negative (people do lose money in crises). If it shows
-a high positive number, this is a regime labelling bug -- apply the `regime_label_fix.py`
-patch to Phase 3 and rerun. The fix sorts regimes by volatility rather than return,
-which is more robust.
+
         """)
 
     st.markdown("### Current system status")
@@ -530,11 +542,9 @@ within a high-volatility period can produce misleadingly high average returns
 if the crisis regime is defined by return rather than risk level.
 
 The criteria table below shows empirically observed average values of each signal
-during all days assigned to each regime. These are learned from data, not hand-coded.
+during all days assigned to each regime. These are learned from data, not hard-coded.
 
-**If crisis shows a high positive return in your table:** apply the `regime_label_fix.py`
-patch to Phase 3 and rerun. The fix changes the sorting from return-based to
-volatility-based labelling.
+
         """)
 
     rc = NAME_COLOR.get(CUREG, "#6B7280")
