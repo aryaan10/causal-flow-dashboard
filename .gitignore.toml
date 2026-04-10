@@ -1,23 +1,45 @@
-# .streamlit/secrets.toml
-# Copy this file to .streamlit/secrets.toml in your GitHub repo
-# NEVER commit this file to a public repo -- add it via Streamlit Cloud dashboard
-# under App settings > Secrets
-
 [google_service_account]
 type = "service_account"
-project_id = "YOUR_PROJECT_ID"
-private_key_id = "YOUR_PRIVATE_KEY_ID"
-private_key = "-----BEGIN RSA PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END RSA PRIVATE KEY-----\n"
-client_email = "your-service-account@your-project.iam.gserviceaccount.com"
-client_id = "YOUR_CLIENT_ID"
+project_id = "causality-graph"
+private_key_id = "ab32ab3e2340dfd659a7b4da2d50789219b9363f"
+private_key = """-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCwvtzxq7N8tKtm
+DCpWlDR4t8CDBaXsx1o2OjnZBNWMYSAWoC6kKBY9dUUhO6Y+6wHhjc4sAPuLZKCQ
+fM/Ei2MZj5CILDhQCe/Fge116HnFzM6hU/mpd3oQjC2rI/8xwmDYDNZkQwP3vZKh
+OeOXi5u97gXcp1pW3WZlTw88OEj1mGpIqr2ybHyKRTuYkTPqa6lM/G7mjxrjkmeu
+QfnyiwxgYWRGt4qqHRq2HkTXXyXyOg8dbZEuhIg1iZ26Uk7SmZUdIBWHb18hJRx0
+URm1DFiUp0NKVC4hSlE730eKDYmsgjtEAua0ApRQMFPEWalpDs2saHwUYm9tUwqI
+px77x5/zAgMBAAECggEAV0CR0BhETh7eskz1JbKaSLHlroi+RaqQRU7vOcxiI5/a
++HBxNga4G/TlgKdyxYK8df3MNvrxMvolLc7/vnZVIMw3vJGf5xtQq78dW+S9IMGf
+jBLpoBhkQQEClob5tzXPGzkTKYHP1qBWX5M1YJ3B77wuVqSjO1im8QJbcg4TLnIS
+QdECAU5ISBIhUo3CczdgxvGJlL8+itoQM4+3EXni5U3QKuwO7Tgvp1dE9KHu2+04
+fQXwsniGEwPCJcVsYIwPpHvnfqEaVWeY42cbt/hMbiJ7/2Gh1+HgYKBNWn+khYhA
+5oz6hl/UdsU33ry54iiD/tsZe0jWRv8PRhzcDPJ3kQKBgQDhLoEA66weEYtW0jGc
+WoPD/39w2LtzmUS4XlnjGsjxIrbL0MJZaD9f4RjY5+nRX70iRrL5NzuV4sQf0RqA
+jZwlLNfoTO4BDErnM+dyc/icMApuK/7aqchKjlxHVai86nX/RICdhdDK7xNN8sNh
+C376fNPQihm/v3xEccEXydED+wKBgQDI71hiXwN0zm7zASP2ONwEzv4+DsUPZaUe
+r8EC4quTcwYsbjuyJTCHiak+fEwuLEVb2irimGzz+Qropjl1VLF5RXM2zn35Jpnk
+I22wF5Mkq9Xr8p5Vuc2G8mDrwHr+rYw4FTTgDKJEYrjf1okifwN73bsbfHc/hIYm
+Jf604XiaaQKBgQDfexnI4hx10w+o4P8fn616Dc5bHp4bQhezquAmxmR6/OrSKKNZ
+vF55N5tDWhbyFsRMikIBmFFolh/zO8HDp8c6FeFJyV/EZoDIKPkg2/v2dq9DXCKY
+vTvs0pC+s0K+CyuEZmYG79GiNdfA2pgRbildTBmjtAuOA+q+uu7aPw9TlQKBgQCY
+1Gs+TxQ66LS8wdZPdcnrImGAZA2Ae4hOwdElV7C2sts0OhfPlLfHr2355+Ktj+Cl
+T1glB1h/bKHeeGfllShzm95ZBlAMjE6qlkPcluHFF6nbD6tcerkXdg0/4yPpx6iK
+E58m9pUJPKlvHycpBMBqmyiwbEfrGOpL48RKYeAwWQKBgFRpk6y0R0IlsRFpD89T
+NsxbHHnNroSXdA8BjxV6bUekD+D3OSlB5YLPbeEF4AOurCrkMcRPnJ82BUxkt9gF
+7uiSECUUMLzSg0HLxfqUqWqi+NgzBsFE7LDVQfYSzVxBoWqXLvuNgjUMeLR/wxRv
+4B0y7D7eEmbGdHnpPYN1/Tfo
+-----END PRIVATE KEY-----"""
+client_email = "causal-flow-reader@causality-graph.iam.gserviceaccount.com"
+client_id = "104132383960023633305"
 auth_uri = "https://accounts.google.com/o/oauth2/auth"
 token_uri = "https://oauth2.googleapis.com/token"
 auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
-client_x509_cert_url = "YOUR_CERT_URL"
+client_x509_cert_url = "https://www.googleapis.com/robot/v1/metadata/x509/causal-flow-reader%40causality-graph.iam.gserviceaccount.com"
 
 [drive_folders]
-processed = "GOOGLE_DRIVE_FOLDER_ID_FOR_processed"
-phase3    = "GOOGLE_DRIVE_FOLDER_ID_FOR_phase3"
-phase4    = "GOOGLE_DRIVE_FOLDER_ID_FOR_phase4"
-phase5    = "GOOGLE_DRIVE_FOLDER_ID_FOR_phase5"
-phase6    = "GOOGLE_DRIVE_FOLDER_ID_FOR_phase6"
+processed = "1ciS_ZTbXuAmYthzenJEiq528DisTyZBu"
+phase3 = "1RpEDB9keniTA7px1B4q0-4f-NOvyyE_3"
+phase4 = "1LEbFukA0OtOf93in9T3TQ5aykMshUnc9"
+phase5 = "1aJrLgbFRdan0cmvwYXl-45wxbfkruak_"
+phase6 = "1z3WNjreKXfY-P0FesFkZsK7vwPW4zv9u"
