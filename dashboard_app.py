@@ -280,6 +280,7 @@ if page == "Home":
         "Tracking " + str(len(ASSETS))
         + " global assets  |  Data as of " + str(summ.get("as_of_date", ""))
         + "  |  Current regime: " + CUREG.upper()
+        
     )
     st.markdown("---")
 
@@ -314,7 +315,7 @@ information A's past contains about B's future, above what B already knows about
 | 0.01 to 0.05 bits | Moderate. A is a meaningful leader of B. |
 | 0.05+ bits | Strong. A strongly leads B. |
 
-Small numbers are normal in efficient markets. Focus on ranking and direction.
+Small numbers are normal in efficient markets. We focus on ranking and direction.
 
 ---
 
@@ -596,8 +597,7 @@ volatility-based labelling.
 - **Crisis:** Sharply negative return, very high volatility, very high correlation,
   deeply negative equity-bond spread (bonds rally as equities sell off)
 
-If crisis shows a high positive return, the regime labelling is inverted.
-Apply the regime_label_fix.py patch to Phase 3 and rerun Phases 3-6.
+
         """)
 
     st.markdown("---")
