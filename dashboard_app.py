@@ -407,7 +407,7 @@ which is more robust.
         "On the bit values: a net flow of 0.01 bits means this asset's past movements "
         "explain roughly 1% of the remaining uncertainty in its followers' next-week returns, "
         "above what those followers already know from their own history. "
-        "Focus on ranking and direction rather than the absolute size."
+        "We focus on ranking and direction rather than the absolute size."
     )
 
 
@@ -623,8 +623,7 @@ volatility-based labelling.
     plt.tight_layout()
     st.pyplot(fig2, width="stretch")
     plt.close()
-    st.caption("Crisis periods (red) should align with major drawdowns. "
-               "If not, apply the regime_label_fix patch.")
+    st.caption("")
 
 
 # -----------------------------------------------------------------------
