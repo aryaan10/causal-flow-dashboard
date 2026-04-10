@@ -305,26 +305,22 @@ If yes, and if the relationship survives rigorous testing, then Oil is a
 ### What the model accomplishes
                     
 **Measures directional influence (not just co-movement)**
-                    
-Identifies which assets lead and which ones follow, capturing the flow of information across markets.
+                    Identifies which assets lead and which ones follow, capturing the flow of information across markets.
                     
 **Quantifies predictive information gain**
+                    Uses information-theoretic methods to test whether one asset meaningfully improves forecasts of another.
                     
-Uses information-theoretic methods to test whether one asset meaningfully improves forecasts of another.
 **Builds a dynamic causal network**
-Represents markets as a graph where nodes are assets and edges capture statistically validated influence.
+                    Represents markets as a graph where nodes are assets and edges capture statistically validated influence.
                     
 **Filters for robustness**
-                    
-Only retains relationships that survive significance testing, reducing noise and spurious signals.
+                    Only retains relationships that survive significance testing, reducing noise and spurious signals.
                     
 **Tracks evolving market structure**
-                    
-Updates relationships over time to capture regime shifts and changing leadership dynamics.
+                    Updates relationships over time to capture regime shifts and changing leadership dynamics.
                     
 **Generates actionable signals**
-                    
-Highlights potential leading indicators that can be used for portfolio construction and risk management.
+                    Highlights potential leading indicators that can be used for portfolio construction and risk management.
                     
 ---
 
